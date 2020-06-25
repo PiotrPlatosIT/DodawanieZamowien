@@ -23,13 +23,13 @@ namespace DodawanieZamowien.Controler
 
         public static void CreateXML(OrderModel order)
         {
-            string path = GetPath();
-            if (!string.IsNullOrWhiteSpace(path))
+            string pathXML = GetPathToSaveFile();
+            if (!string.IsNullOrWhiteSpace(pathXML))
             {
-                XmlSerializer xs = new XmlSerializer(typeof(OrderModel));
-                using (Stream o = File.Create(path))
+                XmlSerializer serializer = new XmlSerializer(typeof(OrderModel));
+                using (Stream o = File.Create(pathXML))
                 {
-                    xs.Serialize(o, order);
+                    serializer.Serialize(o, order);
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace DodawanieZamowien.Controler
             }
         }
 
-        static private string GetPath()
+        static private string GetPathToSaveFile()
         {
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {

@@ -18,10 +18,17 @@ namespace DodawanieZamowien
 
         private void DisplayOrderItems()
         {
-            gridProducts.DataSource = order.Items.ToList();
-            gridProducts.Columns[0].HeaderText = "Nazwa produktu";
-            gridProducts.Columns[1].HeaderText = "Cena";
-            gridProducts.Columns[2].HeaderText = "Il sztuk";
+            try
+            {
+                gridProducts.DataSource = order.Items.ToList();
+                gridProducts.Columns[0].HeaderText = "Nazwa produktu";
+                gridProducts.Columns[1].HeaderText = "Cena";
+                gridProducts.Columns[2].HeaderText = "Il sztuk";
+            }
+            catch (Exception e)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Błąd wyświetlania listy pozycji zamówienia!" + Environment.NewLine + e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
