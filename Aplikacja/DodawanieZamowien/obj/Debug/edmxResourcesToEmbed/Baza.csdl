@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OrderItems">
+    <Key>
+      <PropertyRef Name="Ori_ID" />
+    </Key>
+    <Property Name="Ori_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ori_Ord_ID" Type="Int32" Nullable="false" />
+    <Property Name="Ori_Prd_ID" Type="Int32" Nullable="false" />
+    <Property Name="Ori_Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.Order" FromRole="OrderItems" ToRole="Orders" />
+    <NavigationProperty Name="Products" Relationship="Self.Product" FromRole="OrderItems" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Ord_ID" />
+    </Key>
+    <Property Name="Ord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ord_PurchaserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ord_PurchaserLastname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Ord_PurchaserDateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.Order" FromRole="Orders" ToRole="OrderItems" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Prd_ID" />
+    </Key>
+    <Property Name="Prd_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prd_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Prd_ListPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.Product" FromRole="Products" ToRole="OrderItems" />
+  </EntityType>
+  <Association Name="Order">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Ord_ID" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="Ori_Ord_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Prd_ID" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="Ori_Prd_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BazaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItems" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <AssociationSet Name="Order" Association="Self.Order">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="Product" Association="Self.Product">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

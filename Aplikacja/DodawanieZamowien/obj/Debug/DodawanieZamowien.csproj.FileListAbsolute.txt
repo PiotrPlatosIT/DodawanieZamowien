@@ -1,0 +1,52 @@
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe.config
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\DodawanieZamowien.pdb
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\MetroFramework.Design.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\MetroFramework.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\bin\Debug\MetroFramework.Fonts.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.csprojAssemblyReference.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.Form1.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.Properties.Resources.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.GenerateResource.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CoreCompileInputs.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CopyComplete
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien\DodawanieZamowien\obj\Debug\DodawanieZamowien.pdb
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe.config
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\DodawanieZamowien.pdb
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\EntityFramework.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\EntityFramework.SqlServer.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\MetroFramework.Design.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\MetroFramework.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\MetroFramework.Fonts.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\EntityFramework.xml
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\bin\Debug\EntityFramework.SqlServer.xml
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.csprojAssemblyReference.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.Properties.Resources.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.GenerateResource.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CoreCompileInputs.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CopyComplete
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.pdb
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.Forms.AddProductForm.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2)\DodawanieZamowien\obj\Debug\DodawanieZamowien.MainForm.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe.config
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\DodawanieZamowien.pdb
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\EntityFramework.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\EntityFramework.SqlServer.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\MetroFramework.Design.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\MetroFramework.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\MetroFramework.Fonts.dll
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\EntityFramework.xml
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\bin\Debug\EntityFramework.SqlServer.xml
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.csprojAssemblyReference.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.Forms.AddProductForm.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.MainForm.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.Properties.Resources.resources
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.GenerateResource.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CoreCompileInputs.cache
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.csproj.CopyComplete
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.exe
+D:\Uczelnia\DodawanieZamowien\DodawanieZamowien — kopia — kopia (2) — kopia\DodawanieZamowien\obj\Debug\DodawanieZamowien.pdb

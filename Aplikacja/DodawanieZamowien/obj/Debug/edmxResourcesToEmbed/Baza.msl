@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BazaModelStoreContainer" CdmEntityContainer="BazaEntities">
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="BazaModel.OrderItems">
+        <MappingFragment StoreEntitySet="OrderItems">
+          <ScalarProperty Name="Ori_ID" ColumnName="Ori_ID" />
+          <ScalarProperty Name="Ori_Ord_ID" ColumnName="Ori_Ord_ID" />
+          <ScalarProperty Name="Ori_Prd_ID" ColumnName="Ori_Prd_ID" />
+          <ScalarProperty Name="Ori_Quantity" ColumnName="Ori_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="BazaModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Ord_ID" ColumnName="Ord_ID" />
+          <ScalarProperty Name="Ord_PurchaserName" ColumnName="Ord_PurchaserName" />
+          <ScalarProperty Name="Ord_PurchaserLastname" ColumnName="Ord_PurchaserLastname" />
+          <ScalarProperty Name="Ord_PurchaserDateOfBirth" ColumnName="Ord_PurchaserDateOfBirth" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="BazaModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Prd_ID" ColumnName="Prd_ID" />
+          <ScalarProperty Name="Prd_Name" ColumnName="Prd_Name" />
+          <ScalarProperty Name="Prd_ListPrice" ColumnName="Prd_ListPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BazaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="Ori_ID" />
+          </Key>
+          <Property Name="Ori_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ori_Ord_ID" Type="int" Nullable="false" />
+          <Property Name="Ori_Prd_ID" Type="int" Nullable="false" />
+          <Property Name="Ori_Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Ord_ID" />
+          </Key>
+          <Property Name="Ord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ord_PurchaserName" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ord_PurchaserLastname" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ord_PurchaserDateOfBirth" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Prd_ID" />
+          </Key>
+          <Property Name="Prd_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prd_Name" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prd_ListPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="Order">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Ord_ID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Ori_Ord_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Product">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Prd_ID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Ori_Prd_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BazaModelStoreContainer">
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Order" Association="Self.Order">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="Product" Association="Self.Product">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BazaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OrderItems">
+          <Key>
+            <PropertyRef Name="Ori_ID" />
+          </Key>
+          <Property Name="Ori_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ori_Ord_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ori_Prd_ID" Type="Int32" Nullable="false" />
+          <Property Name="Ori_Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.Order" FromRole="OrderItems" ToRole="Orders" />
+          <NavigationProperty Name="Products" Relationship="Self.Product" FromRole="OrderItems" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Ord_ID" />
+          </Key>
+          <Property Name="Ord_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ord_PurchaserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ord_PurchaserLastname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ord_PurchaserDateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.Order" FromRole="Orders" ToRole="OrderItems" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Prd_ID" />
+          </Key>
+          <Property Name="Prd_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prd_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Prd_ListPrice" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="OrderItems" Relationship="Self.Product" FromRole="Products" ToRole="OrderItems" />
+        </EntityType>
+        <Association Name="Order">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Ord_ID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Ori_Ord_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Product">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Prd_ID" />
+            </Principal>
+            <Dependent Role="OrderItems">
+              <PropertyRef Name="Ori_Prd_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BazaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OrderItems" EntityType="Self.OrderItems" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <AssociationSet Name="Order" Association="Self.Order">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="Product" Association="Self.Product">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderItems" EntitySet="OrderItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BazaModelStoreContainer" CdmEntityContainer="BazaEntities">
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="BazaModel.OrderItems">
+              <MappingFragment StoreEntitySet="OrderItems">
+                <ScalarProperty Name="Ori_ID" ColumnName="Ori_ID" />
+                <ScalarProperty Name="Ori_Ord_ID" ColumnName="Ori_Ord_ID" />
+                <ScalarProperty Name="Ori_Prd_ID" ColumnName="Ori_Prd_ID" />
+                <ScalarProperty Name="Ori_Quantity" ColumnName="Ori_Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="BazaModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Ord_ID" ColumnName="Ord_ID" />
+                <ScalarProperty Name="Ord_PurchaserName" ColumnName="Ord_PurchaserName" />
+                <ScalarProperty Name="Ord_PurchaserLastname" ColumnName="Ord_PurchaserLastname" />
+                <ScalarProperty Name="Ord_PurchaserDateOfBirth" ColumnName="Ord_PurchaserDateOfBirth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="BazaModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Prd_ID" ColumnName="Prd_ID" />
+                <ScalarProperty Name="Prd_Name" ColumnName="Prd_Name" />
+                <ScalarProperty Name="Prd_ListPrice" ColumnName="Prd_ListPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

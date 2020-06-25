@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BazaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OrderItems">
+    <Key>
+      <PropertyRef Name="Ori_ID" />
+    </Key>
+    <Property Name="Ori_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ori_Ord_ID" Type="int" Nullable="false" />
+    <Property Name="Ori_Prd_ID" Type="int" Nullable="false" />
+    <Property Name="Ori_Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Ord_ID" />
+    </Key>
+    <Property Name="Ord_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ord_PurchaserName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ord_PurchaserLastname" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ord_PurchaserDateOfBirth" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Prd_ID" />
+    </Key>
+    <Property Name="Prd_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prd_Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prd_ListPrice" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="Order">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Ord_ID" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="Ori_Ord_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Product">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="Prd_ID" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="Ori_Prd_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BazaModelStoreContainer">
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Order" Association="Self.Order">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="Product" Association="Self.Product">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
